@@ -15,7 +15,7 @@ def get_dataset(name):
     elif name == 'CIFAR10':
         return get_CIFAR10()
     elif name == 'CALTECH':
-        return get_CALTECH()
+        return get_CALTECH(overwrite=False)
     elif name == 'QUICKDRAW':
         return get_QUICKDRAW(0.06)
     
@@ -158,7 +158,7 @@ def create_nparray(dataset, dataroot, processedroot, overwrite=False):
     return images, labels
 
 def get_CALTECH(overwrite=False):
-    dataroot='/datapool/256_ObjectCategoriesSubset'
+    dataroot='/home/nisha/data/256_ObjectCategoriesSubset'
     # dataroot='/datapool/256_ObjectCategoriesSplit'
     # dataroot='/datapool/101_ObjectCategoriesSplit'
     processedroot = str.join('/', [dataroot, 'processed'])
